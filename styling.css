@@ -1,0 +1,130 @@
+* {
+}
+
+body,h1,h2,h3,h4,h5 {
+    /font-family: 'Quicksand', sans-serif;
+}
+
+.w3-row-padding img {
+    margin-bottom: 12px
+}
+
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {
+    width: 120px;
+    background: #222;
+}
+
+@media (max-width: 600px) {
+    .full-width-on-small {
+        width: 100vw;
+    }
+}
+
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {
+    #main {
+        margin-left: 0
+    }
+}
+
+header {
+    background : url('./img/night-sky.jpeg');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
+#center-row {
+    border: 5px red solid;
+}
+
+
+@media (max-width: 300px) {
+    --phone-scale-factor: calc(0.2);
+       
+}
+
+:root {
+    --phone-scale-factor: calc(0.9);
+    --phone-screen-width: calc(360px * var(--phone-scale-factor));
+    --phone-screen-height:calc(640px * var(--phone-scale-factor));
+    --phone-frame-width : calc(10px * var(--phone-scale-factor));
+    --phone-frame-height: calc(60px * var(--phone-scale-factor));
+    --phone-frame-radius: calc(40px * var(--phone-scale-factor)); 
+}
+
+@media (max-width: 360px) {
+    :root {
+        --phone-scale-factor: calc(0.8);
+        --phone-screen-width: calc(360px * var(--phone-scale-factor));
+        --phone-screen-height:calc(640px * var(--phone-scale-factor));
+        --phone-frame-width : calc(10px * var(--phone-scale-factor));
+        --phone-frame-height: calc(60px * var(--phone-scale-factor));
+        --phone-frame-radius: calc(40px * var(--phone-scale-factor)); 
+    }
+} 
+  
+
+.phone-frame {
+    box-sizing: content-box;
+    overflow: hidden;
+    border: solid 1px #f0f0f0;
+    border-width: var(--phone-frame-height) var(--phone-frame-width);
+    border-radius: var(--phone-frame-radius);
+    width: var(--phone-screen-width);
+    height: var(--phone-screen-height);
+    box-shadow: 0px 7px 0 #000, 0px 10px 80px black;
+}
+
+.shadow {
+    box-shadow: 0px 1px 20px black;
+}
+
+@media (max-width: 400px) {
+    .phone {
+        width: calc(720px / 2.5);
+        height: calc(1420px / 2.5);
+    }
+}
+
+@media (max-height: 768px) {
+    .phone {
+        width: calc(720px / 2.8);
+        height: calc(1420px / 2.8);
+    }
+}
+
+#gplay {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+}
+
+.my-border {
+    border: solid 2px white;
+}
+
+header {
+    height: auto;
+}
+
+header * {
+    border: 1px solid none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.fixed-pos {
+    position: fixed;
+}
+
+#description-col {
+    margin-top: 100px;
+    text-shadow: 2px 2px 10px black;
+}
+
+#its-time {
+    font-size: 350%;
+}
