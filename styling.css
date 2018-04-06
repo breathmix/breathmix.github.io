@@ -1,8 +1,9 @@
 * {
+  /  border : solid 1px black;
 }
 
 body,h1,h2,h3,h4,h5 {
-    /font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .w3-row-padding img {
@@ -21,15 +22,9 @@ body,h1,h2,h3,h4,h5 {
     }
 }
 
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {
-    #main {
-        margin-left: 0
-    }
-}
 
 header {
-    background : url('./img/night-sky.jpeg');
+    background : url('./img/header-background.jpeg');
     background-size: auto 100%;
     background-repeat: no-repeat;
 }
