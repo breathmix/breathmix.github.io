@@ -15,7 +15,7 @@ if (isChrome) {
 								   left:0;">
                                    </img>
 								   
-								   <iframe style="width:100%; height:100%;" src="index_app.html"></iframe>
+								   <iframe style="width:100%; height:100%;" src="./index_app.html"></iframe>
 								   `;
 } else {
     phonePlaceholder.innerHTML = `<a href="https://www.google.com/chrome/" target="_blank">
