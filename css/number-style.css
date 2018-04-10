@@ -1,0 +1,24 @@
+[type="number"] {
+  position:relative;
+  width: 6em;
+  height:2em;
+  color: #aaaaaa;
+  background:black;
+  border:none;
+  outline:none;
+  font-size:1em;
+  font-family: "xolonium";
+  text-align:right;
+  border-bottom:solid 1px;
+  margin-left:2em;
+}
+
+[type="number"] ~ label {
+  position:relative;
+  top:-2.2em;
+  left:0;
+  margin-left:-0.5em;
+  color:#aaaaaa;
+  height:0.0em;
+  width:5em;  
+}

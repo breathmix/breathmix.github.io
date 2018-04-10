@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'  https://ajax.googleapis.com data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src * data: blob:; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/range-style.css">
+        <link rel="stylesheet" type="text/css" href="css/radio-style.css">
+        <link rel="stylesheet" type="text/css" href="css/checkbox-style.css">
+        <link rel="stylesheet" type="text/css" href="css/number-style.css">
+        <title>Breathmix</title>
+    </head>
+    <body>
+        <div id="appContainer">
+            <div id="curtain-div"></div>
+            <canvas id="background-canvas"></canvas>
+            <!-- /////////////////////////////////////////////////////// 
+            -->
+            <div id="demo-div">
+                <legend id="demo-title">Session Ended</legend>
+                <p id="demo-text">5 more sessions left </p>
+                <div class="button" id="buy-now">
+                    <div id="lock-text"></div>
+                    <div id="lock"></div>
+                </div>
+            </div>
+            <!-- /////////////////////////////////////////////////////// 
+            -->
+            <div class="button" id="skip-tutorial">Skip Tutorial</div>
+            <div class="button" id="start-tutorial"></div>
+
+            <!-- /////////////////////////////////////////////////////// 
+            -->
+            <div id="sidenav-div" class="sidenav">
+                <!-- /////////////////////////////////////////////////////// -->
+                <!--                    Top Navigation Panel                 -->
+                <!-- /////////////////////////////////////////////////////// 
+                -->
+                <div class="topnav">
+                    <div class="page-tab" id="topnav-audio-button">Audio & vibe</div>
+                    <div class="page-tab" id="topnav-breath-button">Breath shape</div>
+                    <div class="page-tab" id="topnav-mode-button">Display</div>
+                </div>
+                <!-- /////////////////////////////////////////////////////// -->
+                <!--                    Top Navigation Panel (end)           -->
+                <!-- /////////////////////////////////////////////////////// 
+                -->
+                <div class="options_space">
+                    <!-- /////////////////////////////////////////////////////// -->
+                    <!--                    Audio Page                           -->
+                    <!-- /////////////////////////////////////////////////////// 
+                    -->
+                    <!--Guide Sound -->
+                    <div id="audio_page">
+                        <div class="options_box">
+                            <legend>Guide sound </legend>
+                            <input type="radio" name="guide-select" id="guide-select-0" value="0">
+                            <label for="guide-select-0">Space Strings</label>
+                            <input type="radio" name="guide-select" id="guide-select-1" value="1">
+                            <label for="guide-select-1">Guitar</label>
+                            <input type="radio" name="guide-select" id="guide-select-2" value="2">
+                            <label for="guide-select-2">Flute</label>
+                            <input type="radio" name="guide-select" id="guide-select-none" value="none" checked="checked">
+                            <label for="guide-select-none">None</label>
+                            <div class="block_item" id="guide-volume-div">
+                                <input type="range" name="guide-volume-range" min="0" max="100" step="1" value="60">
+                                <label>Volume</label>
+                                <label id="label-guide-volume">100%</label>
+                            </div>
+                            <!-- ///////////////////////////////////////////////////////
+                         -->
+                        </div>
+                        <!-- options_box end -->
+                        <!-- /////////////////////////////////////////////////////// -->
+                        <!--                    Vibration                            -->
+                        <!-- /////////////////////////////////////////////////////// 
+                        -->
+                        <div class="options_box">
+                            <legend>Vibrate</legend>
+                            <div class=block_item>
+                                <input type="checkbox" id="guide-vibrate-checkbox" name="guide-vibrate">
+                                <label for="guide-vibrate-checkbox">Use vibration</label>
+                            </div>
+                        </div>
+                        <!-- /////////////////////////////////////////////////////// -->
+                        <!--                    Vibration End                        -->
+                        <!-- /////////////////////////////////////////////////////// 
+                        -->
+                        <!-- /////////////////////////////////////////////////////// -->
+                        <!--                    Amvient Sound                        -->
+                        <!-- /////////////////////////////////////////////////////// 
+                        -->
+                        <div class="options_box">
+                            <legend>Ambient sound</legend>
+                            <input type="radio" name="music-select" id="music-select-0" value="0" >
+                            <label for="music-select-0">Calm Pond</label>
+                            <input type="radio" name="music-select" id="music-select-1" value="1">
+                            <label for="music-select-1">Relaxing Rain</label>
+                            <input type="radio" name="music-select" id="music-select-2" value="2">
+                            <label for="music-select-2">Foreset Campfire</label>
+                            <input type="radio" name="music-select" id="music-select-none" value="none" checked="checked">
+                            <label for="music-select-none">None</label>
+                            <div class="block_item" id="music-volume-div">
+                                <input type="range" name="music-volume-range" min="0" max="100" step="1" value="60">
+                                <label>Volume</label>
+                                <label id="music-volume-label">100%</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- options_box end -->
+                    <!-- /////////////////////////////////////////////////////// 
+                -->
+                    <!-- audio_page end -->
+                    <!-- /////////////////////////////////////////////////////// -->
+                    <!--              Breath Page                                -->
+                    <!-- /////////////////////////////////////////////////////// 
+            -->
+                    <div id=breath_page>
+                        <div class="options_box">
+                            <div id="breath-shape-div">
+                                <legend>Breath shape</legend>
+                                <input type="radio" name="breath-select" id="breath-select-default" value="default" checked="checked">
+                                <label for="breath-select-default">Default</label>
+                                <input type="radio" name="breath-select" id="breath-select-custom" value="custom">
+                                <label for="breath-select-custom">Custom:</label>
+                                <input type="number" min="1" max="10" value="4" name="breath-shape-inhale" id="breath-shape-inhale">
+                                <label for="breath-shape-inhale">Inhale</label>
+                                <input type="number" min="0" max="10" value="7" name="breath-shape-hold" id="breath-shape-hold">
+                                <label for="breath-shape-hold">Hold</label>
+                                <input type="number" min="1" max="10" value="9" name="breath-shape-exhale" id="breath-shape-exhale">
+                                <label for="breath-shape-exhale">Exhale</label>
+                                <input type="number" min="0" max="10" value="2" name="breath-shape-rest" id="breath-shape-rest">
+                                <label for="breath-shape-rest">Rest</label>
+                            </div>
+                            <div id="breath-shape-graph"></div>
+                            <!-- breath-shape end -->
+                        </div>
+                        <!-- options_box end -->
+                    </div>
+                    <!-- breath_page end -->
+                    <!-- /////////////////////////////////////////////////////// -->
+                    <!--              Heart Rate Monitor Page                    -->
+                    <!-- /////////////////////////////////////////////////////// 
+            -->
+                    <div id="mode_page">
+                        <div class="options_box">
+                            <legend>Heart rate</legend>
+                            <div class=block_item>
+                                <input type="checkbox" id="heartrate-simple-check" name="heartrate-simple">
+                                <label for="heartrate-simple-check">Show in Simple mode</label>
+                            </div>
+                            <div class="block_item">
+                                <input type="checkbox" name="heartrate-bio" id="heartrate-bio-check" checked="checked">
+                                <label for="heartrate-bio-check">Show in Biofeedback mode</label>
+                            </div>
+                        </div>
+                        <div class="options_box">
+                            <legend>Tutorial</legend>
+                            <div class=block_item>
+                                <input type="checkbox" name="tour-guide-show" id="tour-guide-show-check" checked="checked">
+                                <label for="tour-guide-show-check">Show on start</label>
+                            </div>
+                        </div>
+
+                         <div class="options_box">
+                            <legend>Mental battery charge</legend>
+                            <div class=block_item>
+                                <input type="checkbox" name="notifications-show" id="notifications-check" checked="checked">
+                                <label for="notifications-check">Show notifications</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /////////////////////////////////////////////////////// -->
+                <!--                     Footer                              -->
+                <!-- /////////////////////////////////////////////////////// 
+            -->
+                <div class="footer" id="footer-div">
+                    <div class="center_horizontaly">
+                        <div class="button" id="ok">OK
+                        </div>
+                        <div class="button" id="cancel">Cancel
+                        </div>
+                    </div>
+                </div>
+                <!-- footer end -->
+            </div>
+            <!-- options space end -->
+            <!-- /////////////////////////////////////////////////////// -->
+            <!--                    Message Boxes                        -->
+            <!-- /////////////////////////////////////////////////////// 
+-->
+            <div id="bpm-update-div">
+                <legend id="bpm-legend">New resonance found</legend>
+                <div id="message-text">Update BPM?</div>
+                <div class="center_horizontaly">
+                    <div class="button" id="yes">Yes
+                        </div>
+                    <div class="button" id="no">No
+                    </div>
+                </div>
+            </div>
+            <!-- /////////////////////////////////////////////////////// 
+-->
+            <div id="quit-div">
+                <legend id="quit-div-title">Close Breathmix?</legend>
+                <div class="center_horizontaly">
+                    <div class="button" id="quit-yes">Yes</div>
+                    <div class="button" id="quit-no">No</div>
+                </div>
+            </div>
+        </div>
+        <!-- sidenav end -->
+        <!-- /////////////////////////////////////////////////////// 
+-->
+        <div class="font_preload" style="visibility: hidden">
+            <span style="font-family: xolonium;"></span>
+            <span style="font-family: segment7;"></span>
+        </div>
+        <!-- /////////////////////////////////////////////////////// 
+-->
+
+        
+        <!-- Services -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Main entry -->
+        <script src="js/breathmix.min.js" type="text/javascript"></script>
+    </body>
+</html>
