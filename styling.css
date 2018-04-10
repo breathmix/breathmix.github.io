@@ -22,6 +22,33 @@ body,h1,h2,h3,h4,h5 {
     }
 }
 
+@media (min-width: 200px) {
+    .small-margin-on-large {
+        margin-top: -50px;
+    }
+}
+
+@media (min-width: 994px) {
+    .small-margin-on-large {
+        margin-top: -100px;
+    }
+}
+
+@media (max-width: 994px) {
+    
+    .w3-mobile-header {
+        display:block;
+        width: 100%;
+    }
+
+    .rotate-on-small {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
 
 header {
     background : url('./img/header-background.jpeg');
@@ -33,32 +60,18 @@ header {
     border: 5px red solid;
 }
 
-
 @media (max-width: 300px) {
     --phone-scale-factor: calc(0.2);
-       
 }
 
 :root {
-    --phone-scale-factor: calc(0.9);
-    --phone-screen-width: calc(360px * var(--phone-scale-factor));
-    --phone-screen-height:calc(640px * var(--phone-scale-factor));
-    --phone-frame-width : calc(10px * var(--phone-scale-factor));
-    --phone-frame-height: calc(60px * var(--phone-scale-factor));
-    --phone-frame-radius: calc(40px * var(--phone-scale-factor)); 
-}
+    --phone-scale-factor: calc(0.9); --phone-screen-width: calc(360px * var(--phone-scale-factor)); --phone-screen-height:calc(640px * var(--phone-scale-factor)); --phone-frame-width : calc(10px * var(--phone-scale-factor)); --phone-frame-height: calc(60px * var(--phone-scale-factor)); --phone-frame-radius: calc(40px * var(--phone-scale-factor)); }
 
 @media (max-width: 360px) {
     :root {
         --phone-scale-factor: calc(0.8);
-        --phone-screen-width: calc(360px * var(--phone-scale-factor));
-        --phone-screen-height:calc(640px * var(--phone-scale-factor));
-        --phone-frame-width : calc(10px * var(--phone-scale-factor));
-        --phone-frame-height: calc(60px * var(--phone-scale-factor));
-        --phone-frame-radius: calc(40px * var(--phone-scale-factor)); 
-    }
-} 
-  
+        --phone-screen-width: calc(360px * var(--phone-scale-factor)); --phone-screen-height:calc(640px * var(--phone-scale-factor)); --phone-frame-width : calc(10px * var(--phone-scale-factor)); --phone-frame-height: calc(60px * var(--phone-scale-factor)); --phone-frame-radius: calc(40px * var(--phone-scale-factor)); }
+}
 
 .phone-frame {
     box-sizing: content-box;
