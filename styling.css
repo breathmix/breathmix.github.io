@@ -81,6 +81,8 @@ header {
     border-radius: var(--phone-frame-radius);
     width: var(--phone-screen-width);
     height: var(--phone-screen-height);
+	-webkit-box-shadow:0px 7px 0 #000, 0px 10px 80px black;
+	-moz-box-shadow:0px 7px 0 #000, 0px 10px 80px black;
     box-shadow: 0px 7px 0 #000, 0px 10px 80px black;
 }
 
